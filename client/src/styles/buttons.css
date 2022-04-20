@@ -5,8 +5,10 @@
   color: var(--blue);
   font-size: 1rem;
   margin: 1rem;
-  padding: 0.2rem 1rem;
+  padding: 0.5rem 1rem;
   transition: all 0.4s ease-out;
+  text-transform: uppercase;
+  font-weight: bolder;
 }
 
 .button:hover {

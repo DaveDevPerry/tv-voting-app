@@ -10,9 +10,19 @@ const Navbar = ({ auth, logout }) => (
       <ul className="navbar-container">
         <li>
           <Link className="navbar-brand" to="/">
-            Poll app
+            <img
+              src="/images/terrorvision-logo.webp"
+              alt="terrorvision logo"
+              type="webp"
+              id="tv-logo"
+            />
           </Link>
         </li>
+        {/* <li>
+          <Link className="navbar-brand" to="/">
+            Poll app
+          </Link>
+        </li> */}
         {!auth.isAuthenticated && (
           <Fragment>
             <li>
@@ -30,21 +40,26 @@ const Navbar = ({ auth, logout }) => (
         {auth.isAuthenticated && (
           <Fragment>
             <li>
+              {/* <p className="navbar-user">Logged in as {auth.user.username}</p> */}
+              <h1>How To Make Friends and Influence People</h1>
+            </li>
+            {/* <li>
               <Link className="navbar-item" to="/poll/new">
                 New Poll
               </Link>
-            </li>
+            </li> */}
             <li>
               <a className="navbar-item" onClick={logout}>
                 Logout
               </a>
+              <p className="navbar-user">Logged in as {auth.user.username}</p>
             </li>
           </Fragment>
         )}
       </ul>
-      {auth.isAuthenticated && (
+      {/* {auth.isAuthenticated && (
         <p className="navbar-user">Logged in as {auth.user.username}</p>
-      )}
+      )} */}
     </div>
   </nav>
 );
