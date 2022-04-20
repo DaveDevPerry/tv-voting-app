@@ -1,34 +1,23 @@
-import React, { useEffect } from 'react';
+import React from 'react';
 import { connect } from 'react-redux';
-import { Pie } from 'react-chartjs-2';
+// import { Pie } from 'react-chartjs-2';
 
 import { vote } from '../store/actions';
 import { color } from '../services/color';
-import Chart from './Chart';
+
+import { Chart as ChartJS, ArcElement, Tooltip, Legend } from 'chart.js';
+import { Pie } from 'react-chartjs-2';
+
+// ChartJS.register(ArcElement, Tooltip, Legend);
+// import Chart from './Chart';
+// import BarChart from './BarChart';
 
 const Poll = ({ poll, vote }) => {
-  // useEffect(() =>{
-  //   // const userData = poll.user;
-  //   // const votedArr = poll.voted;
-
-  //   if(poll.voted.includes(''))
-  // },[])
-  useEffect(() => {
-    hasVoted();
-  }, []);
-
-  const hasVoted = () => {
-    const votedArr = poll.voted;
-    console.log(votedArr, 'votedArr');
-    // if (votedArr.includes('6260257b4dba563448d577f2')) {
-    //   console.log('yes');
-    // }
-  };
-
-  console.log(vote, 'vote');
-  console.log(poll, 'poll');
-  console.log(poll.user, 'poll user id');
-  console.log(poll.voted, 'poll voted id');
+  // console.log(data, 'data');
+  // console.log(vote, 'vote');
+  // console.log(poll, 'poll');
+  // console.log(poll.user, 'poll user id');
+  // console.log(poll.voted, 'poll voted id');
   const answers =
     poll.options &&
     poll.options.map(option => (
@@ -39,6 +28,23 @@ const Poll = ({ poll, vote }) => {
         {option.option}
       </button>
     ));
+  // const options = {
+  //   // plugins: {
+  //   // 	title: {
+  //   // 		display: true,
+  //   // 		text: 'Chart.js Bar Chart - Stacked',
+  //   // 	},
+  //   // },
+  //   responsive: true,
+  //   // scales: {
+  //   //   x: {
+  //   //     stacked: true,
+  //   //   },
+  //   //   y: {
+  //   //     stacked: true,
+  //   //   },
+  //   // },
+  // };
 
   const data = {
     labels: poll.options.map(option => option.option),
@@ -53,19 +59,19 @@ const Poll = ({ poll, vote }) => {
   };
 
   return (
-    // <Fragment>
-    <div>
+    <div className="poll-container">
       <div className="vote-container">
         <h3 className="poll-title">{poll.question}</h3>
         <div className="buttons_center">{answers}</div>
-        <Pie data={data} />
+        {/* <Pie data={data} /> */}
       </div>
-      {/* {poll.user._id} */}
-      {/* <div className="chart-container">
-        <Chart data={data} />
-      </div> */}
+
+      <div className="chart-container">
+        <Pie data={data} />
+        {/* <Pie data={data} options={options} /> */}
+        {/* <Chart data={data} options={options} /> */}
+      </div>
     </div>
-    // </Fragment>
   );
 };
 
