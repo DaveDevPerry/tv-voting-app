@@ -21,6 +21,7 @@ module.exports = (req, res, next) => {
     //   message: 'No token provided',
     // });
 
-    next(Error('No token provided'));
+    next(Error('Login to Vote'));
+    // next(Error('No token provided'));
   }
 };

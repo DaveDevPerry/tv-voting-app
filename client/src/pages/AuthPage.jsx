@@ -9,8 +9,11 @@ const AuthPage = ({ authType, isAuthenticated }) => {
 
   return (
     <div>
-      <ErrorMessage />
+      <div className="error-wrapper">
+        <ErrorMessage />
+      </div>
       <Auth authType={authType} />
+      {/* <ErrorMessage /> */}
     </div>
   );
 };

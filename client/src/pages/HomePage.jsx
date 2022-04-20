@@ -5,7 +5,10 @@ import Polls from '../components/Polls';
 
 const HomePage = props => (
   <div>
-    <ErrorMessage />
+    <div className="error-wrapper">
+      <ErrorMessage />
+    </div>
+    {/* <ErrorMessage /> */}
     <Polls {...props} />
   </div>
 );

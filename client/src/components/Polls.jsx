@@ -21,16 +21,25 @@ class Polls extends Component {
   render() {
     const { getPolls, getUserPolls, auth } = this.props;
 
+    // WORKING LI VERSION
+    // const polls = this.props.polls.map(poll => (
+    //   <li onClick={() => this.handleSelect(poll._id)} key={poll._id}>
+    //     {poll.question}
+    //   </li>
+    // ));
     const polls = this.props.polls.map(poll => (
-      <li onClick={() => this.handleSelect(poll._id)} key={poll._id}>
+      <div
+        className="poll-card"
+        onClick={() => this.handleSelect(poll._id)}
+        key={poll._id}>
         {poll.question}
-      </li>
+      </div>
     ));
 
     return (
       <Fragment>
         {auth.isAuthenticated && (
-          <div className="buttons_center">
+          <div className="buttons_center hide">
             <button className="button" onClick={getPolls}>
               All polls
             </button>
@@ -39,7 +48,8 @@ class Polls extends Component {
             </button>
           </div>
         )}
-        <ul className="polls">{polls}</ul>
+        {/* <ul className="polls">{polls}</ul> */}
+        <div className="polls-grid">{polls}</div>
       </Fragment>
     );
   }
