@@ -1,5 +1,6 @@
 import React, { Component, Fragment } from 'react';
 import { connect } from 'react-redux';
+import { Link } from 'react-router-dom';
 
 import { getPolls, getUserPolls } from '../store/actions';
 
@@ -39,13 +40,16 @@ class Polls extends Component {
     return (
       <Fragment>
         {auth.isAuthenticated && (
-          <div className="buttons_center hide">
-            <button className="button" onClick={getPolls}>
-              All polls
-            </button>
-            <button className="button" onClick={getUserPolls}>
+          <div className="buttons_center poll-btns-container">
+            <button className="btn" onClick={getUserPolls}>
               My polls
             </button>
+            <button className="btn" onClick={getPolls}>
+              All polls
+            </button>
+            <Link className="navbar-item btn" to="/poll/new">
+              New Poll
+            </Link>
           </div>
         )}
         {/* <ul className="polls">{polls}</ul> */}

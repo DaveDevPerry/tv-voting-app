@@ -5,7 +5,7 @@ import { connect } from 'react-redux';
 import { vote } from '../store/actions';
 import { color } from '../services/color';
 
-import { Chart as ChartJS, ArcElement, Tooltip, Legend } from 'chart.js';
+// import { Chart as ChartJS, ArcElement, Tooltip, Legend } from 'chart.js';
 import { Pie } from 'react-chartjs-2';
 
 // ChartJS.register(ArcElement, Tooltip, Legend);
@@ -62,7 +62,7 @@ const Poll = ({ poll, vote }) => {
     <div className="poll-container">
       <div className="vote-container">
         <h3 className="poll-title">{poll.question}</h3>
-        <div className="buttons_center">{answers}</div>
+        <div className="buttons_center poll-answers">{answers}</div>
         {/* <Pie data={data} /> */}
       </div>
 

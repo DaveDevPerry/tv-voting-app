@@ -51,7 +51,7 @@ class CreatePoll extends Component {
     ));
 
     return (
-      <form className="form" onSubmit={this.handleSubmit}>
+      <form className="form create-poll-form" onSubmit={this.handleSubmit}>
         <label className="form-label" htmlFor="question">
           question
         </label>
@@ -62,8 +62,8 @@ class CreatePoll extends Component {
           value={this.state.question}
           onChange={this.handleChange}
         />
-        <div className="container">{options}</div>
-        <div className="buttons_center">
+        <div className="options-container">{options}</div>
+        <div className="buttons_center create-poll-btns-container">
           <button className="button" type="button" onClick={this.addAnswer}>
             Add options
           </button>
