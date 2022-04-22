@@ -65,7 +65,7 @@ class CreatePoll extends Component {
         <div className="options-container">{options}</div>
         <div className="buttons_center create-poll-btns-container">
           <button className="button" type="button" onClick={this.addAnswer}>
-            Add options
+            Add option
           </button>
           <button className="button" type="submit">
             Submit

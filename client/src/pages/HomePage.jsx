@@ -1,13 +1,13 @@
 import React from 'react';
 
-import ErrorMessage from '../components/ErrorMessage';
+// import ErrorMessage from '../components/ErrorMessage';
 import Polls from '../components/Polls';
 
 const HomePage = props => (
   <div>
-    <div className="error-wrapper">
+    {/* <div className="error-wrapper">
       <ErrorMessage />
-    </div>
+    </div> */}
     {/* <ErrorMessage /> */}
     <Polls {...props} />
   </div>

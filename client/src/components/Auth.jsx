@@ -33,7 +33,7 @@ class Auth extends Component {
       <div>
         <form className="form" onSubmit={this.handleSubmit}>
           <label className="form-label" htmlFor="username">
-            username{' '}
+            username
           </label>
           <input
             type="text"
@@ -44,7 +44,7 @@ class Auth extends Component {
             className="form-input"
           />
           <label className="form-label" htmlFor="password">
-            password{' '}
+            password
           </label>
           <input
             type="password"
@@ -55,7 +55,7 @@ class Auth extends Component {
             className="form-input"
           />
           <div className="buttons_center">
-            <button className="button btn-submit" type="submit">
+            <button className="btn-submit" type="submit">
               Submit
             </button>
           </div>

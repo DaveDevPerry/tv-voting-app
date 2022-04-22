@@ -62,7 +62,7 @@ const Poll = ({ poll, vote }) => {
     <div className="poll-container">
       <div className="vote-container">
         <h3 className="poll-title">{poll.question}</h3>
-        <div className="buttons_center poll-answers">{answers}</div>
+        <div className="poll-answers">{answers}</div>
         {/* <Pie data={data} /> */}
       </div>
 

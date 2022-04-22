@@ -40,7 +40,7 @@ class Polls extends Component {
     return (
       <Fragment>
         {auth.isAuthenticated && (
-          <div className="buttons_center poll-btns-container">
+          <div className="poll-btns-container">
             <button className="btn" onClick={getUserPolls}>
               My polls
             </button>

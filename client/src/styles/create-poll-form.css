@@ -1,4 +1,4 @@
-.form {
+.create-poll-form {
   margin: 1rem;
   background-color: var(--blue);
   padding: 2rem;
@@ -20,10 +20,14 @@
   font-size: 1.8rem;
   margin-bottom: 2rem;
 }
-.buttons_center{
-  text-align: center;
+
+.create-poll-btns-container{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
 }
-.btn-submit {
+.create-poll-btns-container .button{
   background-color:transparent;
   border: 2px solid white;
   border-radius: 5px;

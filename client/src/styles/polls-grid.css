@@ -1,0 +1,21 @@
+.polls-grid{
+  place-content: center;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  grid-template-rows: auto;
+  gap: 1rem;
+  padding: 1rem;
+  /* flex: 1; */
+}
+.poll-card{
+  background-color: var(--blue);
+  border-radius: 5px;
+  padding: 1rem 2rem;
+  display: grid;
+  place-content: center;
+  font-size: 1.8rem;
+  text-align: center;
+  color: white;
+  box-shadow: 3px 3px 5px rgb(0,0,0,0.4);
+}
+  

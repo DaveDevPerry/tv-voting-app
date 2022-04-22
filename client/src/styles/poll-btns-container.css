@@ -1,0 +1,20 @@
+.poll-btns-container{
+  padding: 2rem 0 1rem 0rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  column-gap: 1rem;
+}
+.btn{
+  padding: 0.5rem 1rem;
+  border-radius: 5px;
+  background-color: white;
+  outline: none;
+  border: none;
+  width: 100px;
+  text-align: center;
+  text-transform: capitalize;
+  font-size: 1.8rem;
+  color: var(--blue);
+  box-shadow: 2px 2px 6px rgb(0,0,0,0.4);
+}
