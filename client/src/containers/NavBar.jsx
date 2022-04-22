@@ -21,7 +21,7 @@ const Navbar = ({ auth, logout }) => (
         </li> */}
         <li>
           <Link className="navbar-brand" to="/">
-            TERRORVISION Fan Poll
+            TV Fan Poll
           </Link>
         </li>
         {!auth.isAuthenticated && (
