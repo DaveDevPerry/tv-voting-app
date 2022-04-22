@@ -14,3 +14,6 @@ ul.navbar-container{
   width: 100%;
   list-style: none;
 }
+.right{
+  text-align: right;
+}

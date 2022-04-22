@@ -40,3 +40,7 @@ main.container{
   flex: 1;
   /* max-width: 1000px; */
 }
+a{
+  text-decoration: none;
+  color: white;
+}
