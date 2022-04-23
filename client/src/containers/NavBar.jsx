@@ -56,7 +56,7 @@ const Navbar = ({ auth, logout }) => (
             </li> */}
             <li className="right">
               <p className="navbar-user">{auth.user.username}</p>
-              <a className="navbar-item" onClick={logout}>
+              <a className="navbar-item" onClick={logout} href="#">
                 Logout
               </a>
             </li>
