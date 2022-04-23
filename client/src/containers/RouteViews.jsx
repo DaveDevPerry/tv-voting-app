@@ -8,6 +8,7 @@ import AuthPage from '../pages/AuthPage';
 import PollPage from '../pages/PollPage';
 import CreatePollPage from '../pages/CreatePollPage';
 import TestPage from '../pages/TestPage';
+import UserPage from '../pages/UserPage';
 
 const RouteViews = ({ getCurrentPoll, auth }) => (
   <main className="container">
@@ -42,6 +43,7 @@ const RouteViews = ({ getCurrentPoll, auth }) => (
           <PollPage getPoll={id => getCurrentPoll(id)} {...props} />
         )}
       />
+      <Route exact path="/user" render={props => <UserPage {...props} />} />
       <Route exact path="/test" render={() => <TestPage />} />
     </Switch>
   </main>

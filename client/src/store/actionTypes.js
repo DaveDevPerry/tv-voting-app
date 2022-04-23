@@ -5,3 +5,5 @@ export const SET_CURRENT_USER = 'SET_CURRENT_USER';
 
 export const SET_POLLS = 'SET_POLLS';
 export const SET_CURRENT_POLL = 'SET_CURRENT_POLL';
+
+export const SET_USERS = 'SET_USERS';

@@ -35,7 +35,7 @@ class Polls extends Component {
         key={poll._id}>
         {/* {poll.user._id} */}
         <div className="poll-card-header">
-          <h4>Username</h4>
+          <h4> {poll.user.username}</h4>
           <img src="/images/vote-icon.png" alt="vote count" id="vote-icon" />
           <h5>{poll.voted.length}</h5>
         </div>
