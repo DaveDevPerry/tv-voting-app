@@ -24,8 +24,4 @@ app.use((req, res, next) => {
 });
 app.use(handle.error);
 
-// if(process.env.NODE_ENV === "production"){
-//   app.use(express.static())
-// }
-
 app.listen(PORT, () => console.log(`Server listening on port ${PORT}`));
