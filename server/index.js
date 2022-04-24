@@ -15,10 +15,10 @@ app.use(bodyParser.urlencoded({ extended: true }));
 
 app.use('/api/auth', routes.auth);
 app.use('/api/polls', routes.poll);
-app.use('/api/users', routes.users);
+// app.use('/api/users', routes.users);
 
 app.use((req, res, next) => {
-  let err = new Error('Not Found');
+  let err = new Error('Not x Found');
   err.status = 404;
   next(err);
 });
