@@ -1,6 +1,8 @@
 import axios from 'axios';
 
-const host = 'http://localhost:4000/api';
+const host = 'https://tv-poll.herokuapp.com/api';
+// host for local dev below
+// const host = 'http://localhost:4000/api';
 
 export const setToken = token => {
   if (token) {
