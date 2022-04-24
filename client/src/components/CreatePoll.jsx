@@ -52,6 +52,7 @@ class CreatePoll extends Component {
 
     return (
       <form className="form create-poll-form" onSubmit={this.handleSubmit}>
+        {/* <form className="form create-poll-form" onSubmit={this.handleSubmit}> */}
         <label className="form-label" htmlFor="question">
           question
         </label>

@@ -8,9 +8,11 @@
 .poll-container{
   /* border: 1px solid green; */
   /* background-color: yellow; */
+ place-content: center;
   padding: 1rem;
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+  /* grid-template-columns: repeat(auto-fill, minmax(320px, 1fr)); */
   grid-template-rows: auto;
   gap: 1rem;
   
