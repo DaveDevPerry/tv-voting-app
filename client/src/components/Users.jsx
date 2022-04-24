@@ -5,10 +5,10 @@ import { connect } from 'react-redux';
 import { getUsers } from '../store/actions';
 
 class Users extends Component {
-  constructor(props) {
-    super(props);
-    // this.handleSelect = this.handleSelect.bind(this);
-  }
+  // constructor(props) {
+  //   super(props);
+  //   // this.handleSelect = this.handleSelect.bind(this);
+  // }
   componentDidMount() {
     const { getUsers } = this.props;
     getUsers();
