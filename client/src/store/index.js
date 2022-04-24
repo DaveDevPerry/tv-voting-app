@@ -1,5 +1,4 @@
 import { createStore, applyMiddleware, compose } from 'redux';
-import { composeWithDevTools } from 'redux-devtools-extension/developmentOnly';
 import thunk from 'redux-thunk';
 
 import rootReducer from './reducers';
@@ -21,17 +20,18 @@ const DEFAULT_STATE = {
 //       window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__()
 //     : null;
 
+// export const store = createStore(
+//   rootReducer,
+//   DEFAULT_STATE,
+//   compose(applyMiddleware(thunk), devTools),
+// );
+
+// WORKING ORIGINAL
 export const store = createStore(
   rootReducer,
   DEFAULT_STATE,
-  composeWithDevTools(
-    applyMiddleware(thunk),
-    window.__REDUX_DEVTOOLS_EXTENSION__ &&
-      window.__REDUX_DEVTOOLS_EXTENSION__(),
-  ),
+  compose(applyMiddleware(thunk), null),
 );
-
-// WORKING ORIGINAL
 // export const store = createStore(
 //   rootReducer,
 //   DEFAULT_STATE,
