@@ -19,7 +19,12 @@ const Navbar = ({ auth, logout, toggleTheme, theme }) => (
         <li>
           <div className="switch">
             <label>{theme === 'light' ? 'Light Mode' : 'Dark Mode'}</label>
-            <ReactSwitch onChange={toggleTheme} checked={theme === 'dark'} />
+            <ReactSwitch
+              onChange={toggleTheme}
+              checked={theme === 'dark'}
+              onColor="#333"
+              offColor="#ababab"
+            />
           </div>
         </li>
         <li>
