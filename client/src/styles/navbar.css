@@ -1,5 +1,6 @@
 nav{
-  background-color: var(--blue);
+  background-color: var(--primary);
+  /* background-color: var(--primary); */
 }
 .navbar-brand{
   font-size: 2rem;
@@ -14,6 +15,18 @@ ul.navbar-container{
   width: 100%;
   list-style: none;
 }
-.right{
+ul.navbar-container li{
+  flex: 1;
+  text-align:center;
+}
+/* ul.navbar-container li.left{
+  text-align: left;
+} */
+ul.navbar-container li.right{
   text-align: right;
+}
+#home-icon{
+  height: 3rem;
+  width: 3rem;
+  cursor: pointer;
 }

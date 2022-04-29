@@ -1,14 +1,24 @@
+.polls-grid-container{
+  /* border: 2px solid red; */
+  overflow-y:scroll;
+  /* display: flex;
+  flex-direction: column;
+  flex: 1; */
+  /* height: 100%; */
+  flex:   1;
+
+}
 .polls-grid{
-  place-content: center;
+  /* place-content: center; */
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-  grid-template-rows: auto;
+  /* grid-template-rows: auto; */
   gap: 1rem;
   padding: 1rem;
   /* flex: 1; */
 }
 .poll-card{
-  background-color: var(--blue);
+  background-color: var(--primary);
   border-radius: 5px;
   padding: 1rem 2rem;
   display: grid;
@@ -25,7 +35,7 @@
   background-color: var(--darkBlue);
 }
 .poll-card-new{
-  background-color: var(--blue);
+  background-color: var(--primary);
   border-radius: 5px;
   padding: 1rem 1rem;
   display: flex;

@@ -4,7 +4,7 @@ import React from 'react';
 import Polls from '../components/Polls';
 
 const HomePage = props => (
-  <div>
+  <div className="polls-view-container">
     {/* <div className="error-wrapper">
       <ErrorMessage />
     </div> */}

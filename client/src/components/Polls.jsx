@@ -69,7 +69,9 @@ class Polls extends Component {
           </div>
         )}
         {/* <ul className="polls">{polls}</ul> */}
-        <div className="polls-grid">{polls}</div>
+        <div className="polls-grid-container">
+          <div className="polls-grid">{polls}</div>
+        </div>
       </Fragment>
     );
   }

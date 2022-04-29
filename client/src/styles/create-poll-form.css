@@ -1,6 +1,6 @@
 .create-poll-form {
   margin: 1rem;
-  background-color: var(--blue);
+  background-color: var(--primary);
   padding: 2rem;
   border-radius: 5px;
   align-self: center;

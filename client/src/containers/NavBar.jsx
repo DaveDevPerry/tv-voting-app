@@ -1,27 +1,30 @@
 import React, { Fragment } from 'react';
+import ReactSwitch from 'react-switch';
 import { Link } from 'react-router-dom';
 import { connect } from 'react-redux';
 
 import { logout } from '../store/actions';
 
-const Navbar = ({ auth, logout }) => (
+const Navbar = ({ auth, logout, toggleTheme, theme }) => (
   <nav className="navbar">
     <div className="container">
       {/* <h1 id="title">How To Make Friends and Influence People</h1> */}
       <ul className="navbar-container">
         {/* <li>
           <Link className="navbar-brand" to="/">
-            <img
-              src="/images/terrorvision-logo.webp"
-              alt="terrorvision logo"
-              type="webp"
-              id="tv-logo"
-            />
+            TV Fan Poll
           </Link>
         </li> */}
+        {/* <li className="left"> */}
         <li>
-          <Link className="navbar-brand" to="/">
-            TV Fan Poll
+          <div className="switch">
+            <label>{theme === 'light' ? 'Light Mode' : 'Dark Mode'}</label>
+            <ReactSwitch onChange={toggleTheme} checked={theme === 'dark'} />
+          </div>
+        </li>
+        <li>
+          <Link to="/">
+            <img src="/images/my_house-icon.png" alt="home" id="home-icon" />
           </Link>
         </li>
         {!auth.isAuthenticated && (
@@ -44,11 +47,11 @@ const Navbar = ({ auth, logout }) => (
         )}
         {auth.isAuthenticated && (
           <Fragment>
-            <li>
-              {/* <p className="navbar-user">{auth.user.username}</p> */}
-              {/* <p className="navbar-user">Logged in as {auth.user.username}</p> */}
-              {/* <h1>How To Make Friends and Influence People</h1> */}
-            </li>
+            {/* <li> */}
+            {/* <p className="navbar-user">{auth.user.username}</p> */}
+            {/* <p className="navbar-user">Logged in as {auth.user.username}</p> */}
+            {/* <h1>How To Make Friends and Influence People</h1> */}
+            {/* </li> */}
             {/* <li>
               <Link className="navbar-item" to="/poll/new">
                 New Poll
