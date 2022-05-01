@@ -24,6 +24,13 @@
   border-radius: 5px;
   padding: 2rem 1rem;
 }
+.results-container{
+  background-color: var(--backgroundCard);
+  /* margin: 1rem; */
+  border-radius: 5px;
+  border: 2px solid var(--primary);
+  padding: 2rem 1rem;
+}
 .poll-title {
   font-size: 1.6rem;
   padding: 0 1rem 2rem 1rem;
@@ -54,21 +61,49 @@
 .poll-choice:hover{
   color: var(--primary);
 }
+.poll-card-results-header{
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+  align-items: center;
+  /* margin: 0 1.5rem; */
+  padding-bottom: 0.5rem;
+  border-bottom: 1px solid var(--text);
+}
+/* .poll-card-header h4{
+  text-align: left;
+  font-style: italic;
+  flex: 1;
+  font-size: 1.4rem;
+} */
+.poll-card-results-header h5{
+  font-weight: bolder;
+  font-size: 1.8rem;
+  color: var(--text);
+}
+
+#results-vote-icon{
+  height:1.6rem;
+  width: 1.6rem;
+  margin-right: 0.5rem;
+}
 .poll-results {
   display: flex;
   justify-content: flex-start;
   flex-direction: column;
   /* row-gap: 0.5rem; */
-  padding: 0 1rem;
+  /* padding: 0 1rem; */
+  margin-top: 1rem;
 }
 .poll-choice-result{
-  padding: 0.5rem;
+  padding: 0.5rem 0;
   transition: all 0.4s ease-out;
   text-transform: uppercase;
   /* font-weight: bolder; */
   /* background-color: white; */
   display: flex;
   justify-content: space-between;
+  column-gap: 0.5rem;
   /* border:none; */
   /* border-radius: 2px; */
   font-size: 1.6rem;

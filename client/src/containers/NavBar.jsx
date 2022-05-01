@@ -29,7 +29,16 @@ const Navbar = ({ auth, logout, toggleTheme, theme }) => (
         </li>
         <li>
           <Link to="/">
-            <img src="/images/my_house-icon.png" alt="home" id="home-icon" />
+            <img
+              src={
+                theme === 'light'
+                  ? '/images/my_house-icon.png'
+                  : '/images/my_house-icon-dark.png'
+              }
+              alt="home"
+              id="home-icon"
+            />
+            {/* <img src="/images/my_house-icon.png" alt="home" id="home-icon" /> */}
           </Link>
         </li>
         {!auth.isAuthenticated && (

@@ -15,8 +15,8 @@ import { Pie } from 'react-chartjs-2';
 const Poll = ({ poll, vote }) => {
   // console.log(data, 'data');
   // console.log(vote, 'vote');
-  // console.log(poll, 'poll');
-  // console.log(poll.user, 'poll user id');
+  console.log(poll, 'poll');
+  console.log(poll.user, 'poll user id');
   // console.log(poll.voted, 'poll voted id');
   const answers =
     poll.options &&
@@ -51,9 +51,12 @@ const Poll = ({ poll, vote }) => {
           key={option._id}>
           <p>{option.option}</p>
           {/* - {option.votes} - {pollMetrics.totalVotes} -{' '} */}
-          <p>{(option.votes / pollMetrics.totalVotes) * 100}%</p>
+          <p>{((option.votes / pollMetrics.totalVotes) * 100).toFixed(2)}%</p>
         </li>
       ));
+
+  // const pollDetails =
+  // poll && poll
   // const votePercentage =
   //   poll.options &&
   //   poll.options
@@ -110,23 +113,37 @@ const Poll = ({ poll, vote }) => {
   return (
     <div className="poll-container">
       <div className="vote-container">
+        {/* <div className="poll-card-header">
+          <h4> {poll}</h4>
+          <img src="/images/vote-icon.png" alt="vote count" id="vote-icon" />
+          <h5>{poll.voted.length}</h5>
+        </div> */}
         <h3 className="poll-title">{poll.question}</h3>
         <div className="poll-answers">{answers}</div>
         {/* <Pie data={data} /> */}
       </div>
-      <div className="vote-container">
+      <div className="results-container">
         <h3 className="poll-title">{poll.question}</h3>
-        <h4>{pollMetrics.totalOptions}</h4>
-        <h5>{pollMetrics.totalVotes}</h5>
+        {/* <h4>{pollMetrics.totalOptions}</h4>
+        <h5>{pollMetrics.totalVotes}</h5> */}
+        <div className="poll-card-results-header">
+          {/* <h4> {poll.user.username}</h4> */}
+          <img
+            src="/images/vote-icon.png"
+            alt="vote count"
+            id="results-vote-icon"
+          />
+          <h5>{pollMetrics.totalVotes}</h5>
+        </div>
         <ul className="poll-results">{results}</ul>
         {/* <Pie data={data} /> */}
       </div>
 
-      <div className="chart-container">
-        <Pie data={data} />
-        {/* <Pie data={data} options={options} /> */}
-        {/* <Chart data={data} options={options} /> */}
-      </div>
+      {/* <div className="chart-container">
+        <Pie data={data} /> */}
+      {/* <Pie data={data} options={options} /> */}
+      {/* <Chart data={data} options={options} /> */}
+      {/* </div> */}
     </div>
   );
 };
