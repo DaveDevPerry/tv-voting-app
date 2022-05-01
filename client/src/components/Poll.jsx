@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { Fragment } from 'react';
 import { connect } from 'react-redux';
 // import { Pie } from 'react-chartjs-2';
 
@@ -12,12 +12,10 @@ import { vote } from '../store/actions';
 // import Chart from './Chart';
 // import BarChart from './BarChart';
 
-const Poll = ({ poll, vote }) => {
+const Poll = ({ poll, vote, auth }) => {
   // console.log(data, 'data');
   // console.log(vote, 'vote');
-  console.log(poll, 'poll');
-  console.log(poll.user, 'poll user id');
-  // console.log(poll.voted, 'poll voted id');
+
   const answers =
     poll.options &&
     poll.options.map(option => (
@@ -51,7 +49,7 @@ const Poll = ({ poll, vote }) => {
           key={option._id}>
           <p>{option.option}</p>
           {/* - {option.votes} - {pollMetrics.totalVotes} -{' '} */}
-          <p>{((option.votes / pollMetrics.totalVotes) * 100).toFixed(2)}%</p>
+          <p>{((option.votes / pollMetrics.totalVotes) * 100).toFixed(0)}%</p>
         </li>
       ));
 
@@ -110,47 +108,147 @@ const Poll = ({ poll, vote }) => {
   //   ],
   // };
 
-  return (
-    <div className="poll-container">
-      <div className="vote-container">
-        {/* <div className="poll-card-header">
-          <h4> {poll}</h4>
-          <img src="/images/vote-icon.png" alt="vote count" id="vote-icon" />
-          <h5>{poll.voted.length}</h5>
-        </div> */}
-        <h3 className="poll-title">{poll.question}</h3>
-        <div className="poll-answers">{answers}</div>
-        {/* <Pie data={data} /> */}
-      </div>
-      <div className="results-container">
-        <h3 className="poll-title">{poll.question}</h3>
-        {/* <h4>{pollMetrics.totalOptions}</h4>
-        <h5>{pollMetrics.totalVotes}</h5> */}
-        <div className="poll-card-results-header">
-          {/* <h4> {poll.user.username}</h4> */}
-          <img
-            src="/images/vote-icon.png"
-            alt="vote count"
-            id="results-vote-icon"
-          />
-          <h5>{pollMetrics.totalVotes}</h5>
-        </div>
-        <ul className="poll-results">{results}</ul>
-        {/* <Pie data={data} /> */}
-      </div>
+  console.log(poll, 'poll');
+  console.log(poll.user && poll.user.username, 'poll user id');
+  console.log(poll.user && poll.user, 'poll user id');
+  console.log(auth.user.id, 'poll user id');
+  // console.log(poll.voted, 'poll voted id');
+  console.log(poll.voted, 'poll voted id');
+  // console.log(poll.user && poll.voted.contains(auth.user.id), 'has voted');
 
-      {/* <div className="chart-container">
+  const usersVote = {
+    userId: poll.user && poll.user._id,
+    vote: poll.user && poll._id && poll.voted.includes(poll.user._id),
+  };
+
+  // const usersVote = {
+  //   userId: poll.user && auth.user.id,
+  //   hasUserVoted:
+  //     poll.user && auth.user.id && poll.voted.contains(auth.user.id),
+  // };
+  // poll.user &&
+  // poll._id
+
+  return (
+    <Fragment>
+      {poll.user && poll.voted.includes(auth.user.id) ? (
+        <div className="poll-container">
+          <div className="results-container">
+            <h3 className="poll-title">{poll.question}</h3>
+            {/* <h4>{pollMetrics.totalOptions}</h4>
+        <h5>{pollMetrics.totalVotes}</h5> */}
+            <div className="poll-card-results-header">
+              {/* <h4> {poll.user.username}</h4> */}
+              <img
+                src="/images/vote-icon.png"
+                alt="vote count"
+                id="results-vote-icon"
+              />
+              <h5>{pollMetrics.totalVotes}</h5>
+            </div>
+            <ul className="poll-results">{results}</ul>
+            {/* <Pie data={data} /> */}
+          </div>
+
+          {/* <div className="chart-container">
         <Pie data={data} /> */}
-      {/* <Pie data={data} options={options} /> */}
-      {/* <Chart data={data} options={options} /> */}
-      {/* </div> */}
-    </div>
+          {/* <Pie data={data} options={options} /> */}
+          {/* <Chart data={data} options={options} /> */}
+          {/* </div> */}
+        </div>
+      ) : (
+        <div className="poll-container">
+          <div className="vote-container">
+            <div className="poll-card-header">
+              <h4> {poll.user && poll.user.username}</h4>
+              <img
+                src="/images/vote-icon.png"
+                alt="vote count"
+                id="vote-icon"
+              />
+              <h5>{poll.user && poll.voted.length}</h5>
+            </div>
+            <p>user id - {poll.user && poll.voted}</p>
+            <p>my vote - {poll.user && poll.voted}</p>
+            <p>did vote - {usersVote.vote}</p>
+            <p>user id - {auth.user.id}</p>
+            <p>poll users id - {poll.user && poll.user._id}</p>
+            {poll.user &&
+              poll.voted.map(vote => {
+                return <p key={vote}>{vote}</p>;
+              })}
+            {/* <p>did vote - {usersVote.hasUserVoted}</p> */}
+            <p>
+              did user vote? -{' '}
+              {poll.user && poll.voted.includes(auth.user.id) ? 'true' : 'no'}
+            </p>
+            <h3 className="poll-title">{poll.question}</h3>
+            <div className="poll-answers">{answers}</div>
+            {/* <Pie data={data} /> */}
+          </div>
+        </div>
+      )}
+    </Fragment>
   );
+  // return (
+  //   <Fragment>
+  //     {auth.isAuthenticated && <div>yes</div>}
+  //     <div className="poll-container">
+  //       <div className="vote-container">
+  //         <div className="poll-card-header">
+  //           <h4> {poll.user && poll.user.username}</h4>
+  //           <img src="/images/vote-icon.png" alt="vote count" id="vote-icon" />
+  //           <h5>{poll.user && poll.voted.length}</h5>
+  //         </div>
+  //         <p>user id - {poll.user && poll.voted}</p>
+  //         <p>my vote - {poll.user && poll.voted}</p>
+  //         <p>did vote - {usersVote.vote}</p>
+  //         <p>user id - {auth.user.id}</p>
+  //         <p>poll users id - {poll.user && poll.user._id}</p>
+  //         {poll.user &&
+  //           poll.voted.map(vote => {
+  //             return <p key={vote}>{vote}</p>;
+  //           })}
+  //         {/* <p>did vote - {usersVote.hasUserVoted}</p> */}
+  //         <p>
+  //           did user vote? -{' '}
+  //           {poll.user && poll.voted.includes(auth.user.id) ? 'true' : 'no'}
+  //         </p>
+  //         <h3 className="poll-title">{poll.question}</h3>
+  //         <div className="poll-answers">{answers}</div>
+  //         {/* <Pie data={data} /> */}
+  //       </div>
+  //       <div className="results-container">
+  //         <h3 className="poll-title">{poll.question}</h3>
+  //         {/* <h4>{pollMetrics.totalOptions}</h4>
+  //       <h5>{pollMetrics.totalVotes}</h5> */}
+  //         <div className="poll-card-results-header">
+  //           {/* <h4> {poll.user.username}</h4> */}
+  //           <img
+  //             src="/images/vote-icon.png"
+  //             alt="vote count"
+  //             id="results-vote-icon"
+  //           />
+  //           <h5>{pollMetrics.totalVotes}</h5>
+  //         </div>
+  //         <ul className="poll-results">{results}</ul>
+  //         {/* <Pie data={data} /> */}
+  //       </div>
+
+  //       {/* <div className="chart-container">
+  //       <Pie data={data} /> */}
+  //       {/* <Pie data={data} options={options} /> */}
+  //       {/* <Chart data={data} options={options} /> */}
+  //       {/* </div> */}
+  //     </div>
+  //   </Fragment>
+  // );
 };
 
 export default connect(
   store => ({
     poll: store.currentPoll,
+    auth: store.auth,
   }),
   { vote },
 )(Poll);
