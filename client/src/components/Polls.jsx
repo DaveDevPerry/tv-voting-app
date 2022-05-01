@@ -53,15 +53,19 @@ class Polls extends Component {
     //   </div>
     // ));
 
+    // const currentUser = auth.user.username;
+
     return (
       <Fragment>
         {auth.isAuthenticated && (
           <div className="poll-btns-container">
+            {/* <button>{currentUser}</button> */}
             <button className="btn" onClick={getUserPolls}>
               My polls
             </button>
             <button className="btn" onClick={getPolls}>
               All polls
+              {/* {polls.length} */}
             </button>
             <Link className="navbar-item btn" to="/poll/new">
               New Poll
