@@ -31,6 +31,15 @@
   border: 2px solid var(--primary);
   padding: 2rem 1rem;
 }
+.results-container h4{
+  text-align: left;
+  font-style: italic;
+  flex: 1;
+  font-size: 1.4rem;
+  padding-bottom: 1rem;
+  color: var(--background);
+  color: var(--text);
+}
 .poll-title {
   font-size: 1.6rem;
   padding: 0 1rem 2rem 1rem;
@@ -70,12 +79,24 @@
   padding-bottom: 0.5rem;
   border-bottom: 1px solid var(--text);
 }
-/* .poll-card-header h4{
+.poll-card-header h4{
   text-align: left;
   font-style: italic;
   flex: 1;
   font-size: 1.4rem;
-} */
+  /* padding: 0 1rem 0.5rem; */
+  color: var(--background);
+  /* color: var(--text); */
+}
+.poll-card-header{
+  padding: 0 1rem 0.5rem;
+}
+.poll-card-header h5{
+  font-weight: bolder;
+  font-size: 1.8rem;
+  color: var(--text);
+  color: var(--background);
+}
 .poll-card-results-header h5{
   font-weight: bolder;
   font-size: 1.8rem;

@@ -116,10 +116,10 @@ const Poll = ({ poll, vote, auth }) => {
   console.log(poll.voted, 'poll voted id');
   // console.log(poll.user && poll.voted.contains(auth.user.id), 'has voted');
 
-  const usersVote = {
-    userId: poll.user && poll.user._id,
-    vote: poll.user && poll._id && poll.voted.includes(poll.user._id),
-  };
+  // const usersVote = {
+  //   userId: poll.user && poll.user._id,
+  //   vote: poll.user && poll._id && poll.voted.includes(poll.user._id),
+  // };
 
   // const usersVote = {
   //   userId: poll.user && auth.user.id,
@@ -134,11 +134,11 @@ const Poll = ({ poll, vote, auth }) => {
       {poll.user && poll.voted.includes(auth.user.id) ? (
         <div className="poll-container">
           <div className="results-container">
-            <h3 className="poll-title">{poll.question}</h3>
-            {/* <h4>{pollMetrics.totalOptions}</h4>
-        <h5>{pollMetrics.totalVotes}</h5> */}
+            <h4>{poll.user && poll.user.username} asked...</h4>
+            <h3 className="poll-title">
+              <q>{poll.question}</q>
+            </h3>
             <div className="poll-card-results-header">
-              {/* <h4> {poll.user.username}</h4> */}
               <img
                 src="/images/vote-icon.png"
                 alt="vote count"
@@ -147,20 +147,13 @@ const Poll = ({ poll, vote, auth }) => {
               <h5>{pollMetrics.totalVotes}</h5>
             </div>
             <ul className="poll-results">{results}</ul>
-            {/* <Pie data={data} /> */}
           </div>
-
-          {/* <div className="chart-container">
-        <Pie data={data} /> */}
-          {/* <Pie data={data} options={options} /> */}
-          {/* <Chart data={data} options={options} /> */}
-          {/* </div> */}
         </div>
       ) : (
         <div className="poll-container">
           <div className="vote-container">
             <div className="poll-card-header">
-              <h4> {poll.user && poll.user.username}</h4>
+              <h4>{poll.user && poll.user.username} asks...</h4>
               <img
                 src="/images/vote-icon.png"
                 alt="vote count"
@@ -168,7 +161,7 @@ const Poll = ({ poll, vote, auth }) => {
               />
               <h5>{poll.user && poll.voted.length}</h5>
             </div>
-            <p>user id - {poll.user && poll.voted}</p>
+            {/* <p>user id - {poll.user && poll.voted}</p>
             <p>my vote - {poll.user && poll.voted}</p>
             <p>did vote - {usersVote.vote}</p>
             <p>user id - {auth.user.id}</p>
@@ -177,12 +170,13 @@ const Poll = ({ poll, vote, auth }) => {
               poll.voted.map(vote => {
                 return <p key={vote}>{vote}</p>;
               })}
-            {/* <p>did vote - {usersVote.hasUserVoted}</p> */}
             <p>
               did user vote? -{' '}
               {poll.user && poll.voted.includes(auth.user.id) ? 'true' : 'no'}
-            </p>
-            <h3 className="poll-title">{poll.question}</h3>
+            </p> */}
+            <h3 className="poll-title">
+              <q>{poll.question}</q>
+            </h3>
             <div className="poll-answers">{answers}</div>
             {/* <Pie data={data} /> */}
           </div>
