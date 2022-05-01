@@ -3,10 +3,10 @@ import { connect } from 'react-redux';
 // import { Pie } from 'react-chartjs-2';
 
 import { vote } from '../store/actions';
-import { color } from '../services/color';
+// import { color } from '../services/color';
 
 // import { Chart as ChartJS, ArcElement, Tooltip, Legend } from 'chart.js';
-import { Pie } from 'react-chartjs-2';
+// import { Pie } from 'react-chartjs-2';
 
 // ChartJS.register(ArcElement, Tooltip, Legend);
 // import Chart from './Chart';
@@ -98,17 +98,17 @@ const Poll = ({ poll, vote }) => {
   //   // },
   // };
 
-  const data = {
-    labels: poll.options.map(option => option.option),
-    datasets: [
-      {
-        label: poll.question,
-        backgroundColor: poll.options.map(option => color()),
-        borderColor: '#323643',
-        data: poll.options.map(option => option.votes),
-      },
-    ],
-  };
+  // const data = {
+  //   labels: poll.options.map(option => option.option),
+  //   datasets: [
+  //     {
+  //       label: poll.question,
+  //       backgroundColor: poll.options.map(option => color()),
+  //       borderColor: '#323643',
+  //       data: poll.options.map(option => option.votes),
+  //     },
+  //   ],
+  // };
 
   return (
     <div className="poll-container">
