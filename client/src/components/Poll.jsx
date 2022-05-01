@@ -28,6 +28,55 @@ const Poll = ({ poll, vote }) => {
         {option.option}
       </button>
     ));
+
+  const pollMetrics = {
+    totalOptions: poll.options && poll.options.length,
+    totalVotes:
+      poll.options &&
+      poll.options.reduce((accumulator, object) => {
+        return accumulator + object.votes;
+      }, 0),
+  };
+
+  const results =
+    poll.options &&
+    poll.options
+      .sort((a, b) => {
+        return b.votes - a.votes;
+      })
+      .map(option => (
+        <li
+          // onClick={() => vote(poll._id, { answer: option.option })}
+          className="poll-choice-result"
+          key={option._id}>
+          <p>{option.option}</p>
+          {/* - {option.votes} - {pollMetrics.totalVotes} -{' '} */}
+          <p>{(option.votes / pollMetrics.totalVotes) * 100}%</p>
+        </li>
+      ));
+  // const votePercentage =
+  //   poll.options &&
+  //   poll.options
+  //     .sort((a, b) => {
+  //       return b.votes - a.votes;
+  //     })
+  //     .map(option => (
+  //       <li
+  //         // onClick={() => vote(poll._id, { answer: option.option })}
+  //         className="button poll-choice"
+  //         key={option._id}>
+  //         {option.option} - {option.votes} - {option.votes}
+  //       </li>
+  //     ));
+  // poll.options.map(option => (
+  //   <li
+  //     onClick={() => vote(poll._id, { answer: option.option })}
+  //     className="button poll-choice"
+  //     key={option._id}>
+  //     {option.option} - {option.votes}
+  //   </li>
+  // ));
+
   // const options = {
   //   // plugins: {
   //   // 	title: {
@@ -63,6 +112,13 @@ const Poll = ({ poll, vote }) => {
       <div className="vote-container">
         <h3 className="poll-title">{poll.question}</h3>
         <div className="poll-answers">{answers}</div>
+        {/* <Pie data={data} /> */}
+      </div>
+      <div className="vote-container">
+        <h3 className="poll-title">{poll.question}</h3>
+        <h4>{pollMetrics.totalOptions}</h4>
+        <h5>{pollMetrics.totalVotes}</h5>
+        <ul className="poll-results">{results}</ul>
         {/* <Pie data={data} /> */}
       </div>
 

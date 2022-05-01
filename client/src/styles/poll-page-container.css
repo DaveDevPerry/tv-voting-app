@@ -54,6 +54,29 @@
 .poll-choice:hover{
   color: var(--primary);
 }
+.poll-results {
+  display: flex;
+  justify-content: flex-start;
+  flex-direction: column;
+  /* row-gap: 0.5rem; */
+  padding: 0 1rem;
+}
+.poll-choice-result{
+  padding: 0.5rem;
+  transition: all 0.4s ease-out;
+  text-transform: uppercase;
+  /* font-weight: bolder; */
+  /* background-color: white; */
+  display: flex;
+  justify-content: space-between;
+  /* border:none; */
+  /* border-radius: 2px; */
+  font-size: 1.6rem;
+  color: var(--text);
+}
+/* .poll-choice:hover{
+  color: var(--primary);
+} */
 .chart-container{
   background-color: white;
   /* margin: 1rem; */
