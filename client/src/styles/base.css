@@ -14,16 +14,16 @@
     --darkBlue: #1363db;
     --light: #ABABAB;
     --background: #ABABAB;
-    --backgroundCard: #ABABAB;
+    --backgroundCard: #ffffff;
     --primary: #277BFD;
-    --text: #ffffff;
+    --text: #353434;
   }
   #dark{
     --danger: #911004;
     --blue: #277BFD;
     --darkBlue: #d96900;
     --light: #ABABAB;
-    --background: #3d3d3d;
+    --background: #252424;
     --backgroundCard: #3d3d3d;
     --primary: #ff7c02;
     --text: #ffffff;

@@ -31,17 +31,46 @@ class Polls extends Component {
     const polls = this.props.polls.map(poll => (
       <div
         className="poll-card poll-card-new"
+        // className={
+        //   poll.voted.includes(auth.user.id)
+        //     ? 'poll-card poll-card-new has-voted'
+        //     : 'poll-card poll-card-new'
+        // }
         onClick={() => this.handleSelect(poll._id)}
         key={poll._id}>
         {/* {poll.user._id} */}
         <div className="poll-card-header">
           <h4> {poll.user.username}</h4>
+          {poll.voted.includes(auth.user.id) ? (
+            <img
+              src="/images/has-voted-icon.png"
+              alt="has voted"
+              id="has-voted-icon"
+            />
+          ) : (
+            ''
+          )}
           <img src="/images/vote-icon.png" alt="vote count" id="vote-icon" />
           <h5>{poll.voted.length}</h5>
         </div>
         <div className="poll-card-question">{poll.question}</div>
       </div>
     ));
+    // const polls = this.props.polls.map(poll => (
+    //   <div
+    //     className="poll-card poll-card-new"
+    //     onClick={() => this.handleSelect(poll._id)}
+    //     key={poll._id}>
+    //     {/* {poll.user._id} */}
+    //     <div className="poll-card-header">
+    //       <h4> {poll.user.username}</h4>
+    //       <img src="/images/vote-icon.png" alt="vote count" id="vote-icon" />
+    //       <h5>{poll.voted.length}</h5>
+    //     </div>
+    //     <div className="poll-card-question">{poll.question}</div>
+    //   </div>
+    // ));
+
     // const polls = this.props.polls.map(poll => (
     //   <div
     //     className="poll-card poll-card-new"

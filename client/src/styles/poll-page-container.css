@@ -19,7 +19,7 @@
   
 }
 .vote-container{
-  background-color: var(--primary);
+  background-color: var(--backgroundCard);
   /* margin: 1rem; */
   border-radius: 5px;
   padding: 2rem 1rem;
@@ -39,6 +39,7 @@
   padding-bottom: 1rem;
   color: var(--background);
   color: var(--text);
+  color: var(--primary);
 }
 .poll-title {
   font-size: 1.6rem;
@@ -46,6 +47,7 @@
   text-align: left;
   text-transform: capitalize;
   color: white;
+  color: var(--text);
   font-weight: 100;
 } 
 .poll-answers {
@@ -61,7 +63,7 @@
   transition: all 0.4s ease-out;
   text-transform: uppercase;
   font-weight: bolder;
-  background-color: white;
+  /* background-color: white; */
   border:none;
   border-radius: 2px;
   font-size: 1.6rem;
@@ -85,22 +87,40 @@
   flex: 1;
   font-size: 1.4rem;
   /* padding: 0 1rem 0.5rem; */
-  color: var(--background);
+  color: var(--primary);
   /* color: var(--text); */
 }
 .poll-card-header{
-  padding: 0 1rem 0.5rem;
+  padding: 0 0 0.5rem;
 }
-.poll-card-header h5{
+.poll-card-question-header{
+  padding: 0 1rem 0.5rem;
+  /* display: flex; */
+  /* flex-direction: row; */
+  /* justify-content: flex-end; */
+  /* align-items: center; */
+  /* margin: 0 1.5rem; */
+  padding-bottom: 0.5rem;
+  /* border-bottom: 1px solid var(--text); */
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  color: var(--primary);
+  /* border-bottom: 1px solid var(--text); */
+}
+.poll-card-question-header h4{
+flex: 1;
+}
+.poll-card-header h5, .poll-card-question-header h5{
   font-weight: bolder;
   font-size: 1.8rem;
   color: var(--text);
-  color: var(--background);
+  color: var(--primary);
 }
 .poll-card-results-header h5{
   font-weight: bolder;
   font-size: 1.8rem;
-  color: var(--text);
+  color: var(--primary);
 }
 
 #results-vote-icon{

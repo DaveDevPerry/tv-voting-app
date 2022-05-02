@@ -152,7 +152,7 @@ const Poll = ({ poll, vote, auth }) => {
       ) : (
         <div className="poll-container">
           <div className="vote-container">
-            <div className="poll-card-header">
+            <div className="poll-card-question-header">
               <h4>{poll.user && poll.user.username} asks...</h4>
               <img
                 src="/images/vote-icon.png"

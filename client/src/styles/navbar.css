@@ -30,3 +30,7 @@ ul.navbar-container li.right{
   width: 3rem;
   cursor: pointer;
 }
+.navbar-user{
+  color: var(--background);
+  font-weight: bold;
+}

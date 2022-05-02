@@ -7,6 +7,7 @@
 }
 .form-label {
   color: white;
+  color: var(--text);
   text-transform: uppercase;
   font-size: 1.6rem;
 }
@@ -28,6 +29,7 @@
   border: 2px solid white;
   border-radius: 5px;
   color: white;
+  color: var(--text);
   font-size: 1.6rem;
   padding: 0.5rem 1rem;
   transition: all 0.4s ease-out;
