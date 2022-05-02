@@ -1,4 +1,5 @@
 import React, { Component, Fragment } from 'react';
+import { RiTrophyFill } from 'react-icons/ri';
 import { connect } from 'react-redux';
 import { Link } from 'react-router-dom';
 
@@ -67,6 +68,7 @@ class Polls extends Component {
                 // onClick={() => vote(poll._id, { answer: option.option })}
                 className="poll-card-current-winner"
                 key={option._id}>
+                <RiTrophyFill className="trophy-icon" />
                 <p>{option.option}</p>
                 {/* - {option.votes} - {pollMetrics.totalVotes} -{' '} */}
                 {/* <p>{((option.votes / pollMetrics.totalVotes) * 100).toFixed(0)}%</p> */}

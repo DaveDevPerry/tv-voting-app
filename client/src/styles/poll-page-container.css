@@ -36,6 +36,11 @@
   justify-content: space-between;
   align-items: center;
   padding: 0 1rem;
+
+}
+.poll-card-title-wrapper a{
+  color: var(--primary);
+  font-weight: bolder;
 }
 .results-container h4{
   text-align: left;

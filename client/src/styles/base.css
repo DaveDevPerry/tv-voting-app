@@ -17,6 +17,7 @@
     --backgroundCard: #ffffff;
     --primary: #277BFD;
     --text: #353434;
+    --trophy: #efa906;
   }
   #dark{
     --danger: #911004;
@@ -27,6 +28,7 @@
     --backgroundCard: #3d3d3d;
     --primary: #ff7c02;
     --text: #ffffff;
+    --trophy: #fcdc24;
   }
   html{
     font-size: 62.5%;

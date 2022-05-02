@@ -95,11 +95,15 @@
 }
 .poll-card-current-winner p{
   font-style: italic;
-  
+  font-weight: bold;
   font-size: 1.4rem;
   color: var(--primary);
 }
-.poll-card-current-winner p:first-child{
+.poll-card-current-winner .trophy-icon{
+  color: var(--trophy);
+  margin-right: 0.5rem;
+}
+.poll-card-current-winner p:nth-child(2){
   flex: 1;
   text-align: left;
 }
