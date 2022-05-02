@@ -31,6 +31,12 @@
   border: 2px solid var(--primary);
   padding: 2rem 1rem;
 }
+.poll-card-title-wrapper{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 1rem;
+}
 .results-container h4{
   text-align: left;
   font-style: italic;

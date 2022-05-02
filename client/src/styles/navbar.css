@@ -1,6 +1,7 @@
 nav{
   background-color: var(--primary);
   /* background-color: var(--primary); */
+  
 }
 .navbar-brand{
   font-size: 2rem;

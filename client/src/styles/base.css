@@ -34,6 +34,9 @@
     background-color: var(--danger);
     /* overflow: hidden; */
   }
+  /* .App{
+    border: 2px solid green;
+  } */
   .switch{
     display: flex;
     justify-content: flex-start;
@@ -76,7 +79,7 @@
 }
 /* .container{
   border: 2px solid green;
-  max-width: 1000px;
+  max-width: 1200px;
   margin: 0 auto;
 } */
 main.container{

@@ -40,8 +40,9 @@ class Polls extends Component {
         key={poll._id}>
         {/* {poll.user._id} */}
         <div className="poll-card-header">
-          <h4> {poll.user.username}</h4>
-          {polls && poll.voted.includes(auth.user.id) ? (
+          <h4>{poll.user.username}</h4>
+          {/* {poll.voted.includes(auth.user.id) ? ( */}
+          {poll.voted.includes(auth.user.id) ? (
             <img
               src="/images/has-voted-icon.png"
               alt="has voted"
@@ -54,6 +55,25 @@ class Polls extends Component {
           <h5>{poll.voted.length}</h5>
         </div>
         <div className="poll-card-question">{poll.question}</div>
+        {/* <div className="poll-card-current-winner"> */}
+        {poll.options &&
+          poll.options
+            .sort((a, b) => {
+              return b.votes - a.votes;
+            })
+            .slice(0, 1)
+            .map(option => (
+              <div
+                // onClick={() => vote(poll._id, { answer: option.option })}
+                className="poll-card-current-winner"
+                key={option._id}>
+                <p>{option.option}</p>
+                {/* - {option.votes} - {pollMetrics.totalVotes} -{' '} */}
+                {/* <p>{((option.votes / pollMetrics.totalVotes) * 100).toFixed(0)}%</p> */}
+                <p>{option.votes}</p>
+              </div>
+            ))}
+        {/* </div> */}
       </div>
     ));
     // const polls = this.props.polls.map(poll => (
@@ -97,7 +117,7 @@ class Polls extends Component {
               {/* {polls.length} */}
             </button>
             <Link className="navbar-item btn" to="/poll/new">
-              New Poll
+              Add Poll
             </Link>
           </div>
         )}

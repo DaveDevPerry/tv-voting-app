@@ -83,5 +83,23 @@
   margin-right: 0.5rem;
 }
 .poll-card-question{
-  padding: 0 1rem;;
+  padding: 0 1rem;
+  flex: 1;
+}
+.poll-card-current-winner{
+  border-top: 1px solid var(--text);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-top: 0.5rem;
+}
+.poll-card-current-winner p{
+  font-style: italic;
+  
+  font-size: 1.4rem;
+  color: var(--primary);
+}
+.poll-card-current-winner p:first-child{
+  flex: 1;
+  text-align: left;
 }

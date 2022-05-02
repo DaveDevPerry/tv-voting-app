@@ -9,7 +9,9 @@ const CreatePollPage = ({ isAuthenticated }) => {
 
   return (
     <div>
-      <ErrorMessage />
+      <div className="error-wrapper">
+        <ErrorMessage />
+      </div>
       <CreatePoll />
     </div>
   );

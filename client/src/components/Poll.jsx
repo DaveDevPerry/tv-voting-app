@@ -1,5 +1,6 @@
 import React, { Fragment } from 'react';
 import { connect } from 'react-redux';
+import { Link } from 'react-router-dom';
 // import { Pie } from 'react-chartjs-2';
 
 import { vote } from '../store/actions';
@@ -134,7 +135,10 @@ const Poll = ({ poll, vote, auth }) => {
       {poll.user && poll.voted.includes(auth.user.id) ? (
         <div className="poll-container">
           <div className="results-container">
-            <h4>{poll.user && poll.user.username} asked...</h4>
+            <div className="poll-card-title-wrapper">
+              <h4>{poll.user && poll.user.username} asked...</h4>
+              <Link to="/">X</Link>
+            </div>
             <h3 className="poll-title">
               <q>{poll.question}</q>
             </h3>
