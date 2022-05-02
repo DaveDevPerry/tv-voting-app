@@ -26,6 +26,10 @@ ul.navbar-container li{
 ul.navbar-container li.right{
   text-align: right;
 }
+#nav-logout{
+  color: var(--background);
+  cursor: pointer;
+}
 #home-icon{
   height: 3rem;
   width: 3rem;
