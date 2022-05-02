@@ -18,6 +18,7 @@
     --primary: #277BFD;
     --text: #353434;
     --trophy: #efa906;
+    --voted: #24b903;
   }
   #dark{
     --danger: #911004;
@@ -29,6 +30,7 @@
     --primary: #ff7c02;
     --text: #ffffff;
     --trophy: #fcdc24;
+    --voted: #2de603;
   }
   html{
     font-size: 62.5%;

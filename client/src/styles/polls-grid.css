@@ -77,10 +77,21 @@
   width: 1.6rem;
   margin-right: 0.5rem;
 }
+.vote-icon{
+  height:1.6rem;
+  width: 1.6rem;
+  /* margin-right: 0.5rem; */
+}
 #has-voted-icon{
   height:1.6rem;
   width: 1.6rem;
   margin-right: 0.5rem;
+}
+.has-voted-icon{
+  height:1.6rem;
+  width: 1.6rem;
+  margin-right: 0.5rem;
+  color: var(--voted);
 }
 .poll-card-question{
   padding: 0 1rem;

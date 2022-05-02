@@ -1,5 +1,7 @@
 import React, { Component, Fragment } from 'react';
 import { RiTrophyFill } from 'react-icons/ri';
+import { FaVoteYea } from 'react-icons/fa';
+import { MdHowToVote } from 'react-icons/md';
 import { connect } from 'react-redux';
 import { Link } from 'react-router-dom';
 
@@ -44,15 +46,17 @@ class Polls extends Component {
           <h4>{poll.user.username}</h4>
           {/* {poll.voted.includes(auth.user.id) ? ( */}
           {poll.voted.includes(auth.user.id) ? (
-            <img
-              src="/images/has-voted-icon.png"
-              alt="has voted"
-              id="has-voted-icon"
-            />
+            // <img
+            //   src="/images/has-voted-icon.png"
+            //   alt="has voted"
+            //   id="has-voted-icon"
+            // />
+            <FaVoteYea alt="has voted" className="has-voted-icon" />
           ) : (
             ''
           )}
-          <img src="/images/vote-icon.png" alt="vote count" id="vote-icon" />
+          {/* <img src="/images/vote-icon.png" alt="vote count" id="vote-icon" /> */}
+          <MdHowToVote alt="vote count" className="vote-icon" />
           <h5>{poll.voted.length}</h5>
         </div>
         <div className="poll-card-question">{poll.question}</div>
