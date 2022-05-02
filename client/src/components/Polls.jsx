@@ -53,6 +53,7 @@ class Polls extends Component {
             // />
             <FaVoteYea alt="has voted" className="has-voted-icon" />
           ) : (
+            // <FaVoteYea alt="has voted" className="has-voted-icon" />
             ''
           )}
           {/* <img src="/images/vote-icon.png" alt="vote count" id="vote-icon" /> */}
