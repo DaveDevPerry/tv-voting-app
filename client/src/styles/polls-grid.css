@@ -1,6 +1,6 @@
 .polls-grid-container{
   /* border: 2px solid red; */
-  overflow-y:scroll;
+  overflow-y:auto;
   /* display: flex;
   flex-direction: column;
   flex: 1; */

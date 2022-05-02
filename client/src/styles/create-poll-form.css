@@ -1,7 +1,7 @@
 .create-poll-form {
   margin: 1rem;
   background-color: var(--backgroundCard);
-  padding: 2rem;
+  padding: 2rem 1rem;
   border-radius: 5px;
   align-self: center;
 }
@@ -34,11 +34,11 @@
   border: 2px solid var(--primary);
   border-radius: 5px;
   color: var(--text);
-  font-size: 1.6rem;
-  padding: 0.5rem 1rem;
+  font-size: 1.2rem;
+  padding: 0.5rem 0.5rem;
   transition: all 0.4s ease-out;
   text-transform: uppercase;
   font-weight: bolder;
-  width: 150px;
+  width: 100px;
   background-color: var(--background);
 }

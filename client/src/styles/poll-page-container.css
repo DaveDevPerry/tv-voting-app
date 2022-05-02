@@ -4,7 +4,7 @@
   flex-direction: column;
   /* justify-content: space-between; */
   height: 100%;
-  overflow-y: scroll;
+  overflow-y: auto;
 }
 .poll-container{
   /* border: 1px solid green; */
@@ -14,7 +14,7 @@
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
   /* grid-template-columns: repeat(auto-fill, minmax(320px, 1fr)); */
-  grid-template-rows: repeat(2, 1fr);
+  /* grid-template-rows: repeat(2, 1fr); */
   gap: 1rem;
   
 }
