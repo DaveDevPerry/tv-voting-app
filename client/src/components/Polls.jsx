@@ -41,7 +41,7 @@ class Polls extends Component {
         {/* {poll.user._id} */}
         <div className="poll-card-header">
           <h4> {poll.user.username}</h4>
-          {poll.voted.includes(auth.user.id) ? (
+          {polls && poll.voted.includes(auth.user.id) ? (
             <img
               src="/images/has-voted-icon.png"
               alt="has voted"
