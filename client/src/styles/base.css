@@ -39,7 +39,10 @@
     /* overflow: hidden; */
   }
   body{
-    background-color: var(--background);
+    background-image: url('/images/tvp_bg.webp');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
   }
   /* .App{
     border: 2px solid green;
@@ -62,7 +65,7 @@
     max-width: 1200px;
     margin: 0 auto;
     /* height: 100%; */
-    background-color: var(--background);
+    /* background-color: var(--background); */
     /* height: 100vh; */
     /* width: 100vw; */
     /* overflow: hidden; */
@@ -72,7 +75,7 @@
   }
 
   body #dark, body #light{
-  background-color: var(--background);
+  /* background-color: var(--background); */
   height: 100vh;
   width: 100vw;
   font-size: 1.6rem;

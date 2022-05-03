@@ -31,6 +31,8 @@ class Polls extends Component {
     //     {poll.question}
     //   </li>
     // ));
+    // const users = this.props.polls.map(poll => <div>{poll.user.username}</div>);
+
     const polls = this.props.polls.map(poll => (
       <div
         className="poll-card poll-card-new"
@@ -100,6 +102,7 @@ class Polls extends Component {
         <div className="polls-grid-container">
           <div className="polls-grid">{polls}</div>
         </div>
+        {/* <div>{users}</div> */}
       </Fragment>
     );
   }
