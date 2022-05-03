@@ -13,7 +13,13 @@ import TestPage from '../pages/TestPage';
 const RouteViews = ({ getCurrentPoll, auth }) => (
   <main className="container">
     <Switch>
-      <Route exact path="/" render={props => <HomePage {...props} />} />
+      <Route
+        exact
+        path="/"
+        render={props => (
+          <HomePage {...props} isAuthenticated={auth.isAuthenticated} />
+        )}
+      />
       <Route
         exact
         path="/login"
