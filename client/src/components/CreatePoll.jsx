@@ -1,4 +1,5 @@
 import React, { Component, Fragment } from 'react';
+import { Redirect } from 'react-router-dom';
 import { connect } from 'react-redux';
 import { Link } from 'react-router-dom';
 
@@ -10,6 +11,7 @@ class CreatePoll extends Component {
     this.state = {
       question: '',
       options: ['', ''],
+      redirectToReferrer: false,
     };
 
     this.handleChange = this.handleChange.bind(this);
@@ -35,9 +37,15 @@ class CreatePoll extends Component {
   handleSubmit(e) {
     e.preventDefault();
     this.props.createPoll(this.state);
+    this.setState({ redirectToReferrer: true });
   }
 
   render() {
+    const redirectToReferrer = this.state.redirectToReferrer;
+    if (redirectToReferrer) {
+      return <Redirect to="/" />;
+    }
+    // ... rest of render method code
     const options = this.state.options.map((option, i) => (
       <Fragment key={i}>
         <label className="form-label">option</label>

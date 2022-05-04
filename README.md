@@ -8,9 +8,9 @@ Project Link: [TV Fan Poll](https://illustrious-travesseiro-d45285.netlify.app/)
 
 An app for fans to create and answer polls for anything terrorvision related.
 
-## Game Details
+<!-- ## Game Details
 
-Each player choses ten numbers (from available lotto numbers range). Mark off each of your numbers if the ball was drawn in the official lotto draw. The winner is the first person to match all ten numbers.
+Each player choses ten numbers (from available lotto numbers range). Mark off each of your numbers if the ball was drawn in the official lotto draw. The winner is the first person to match all ten numbers. -->
 
 ## Motivation
 
