@@ -89,6 +89,9 @@ class Polls extends Component {
             <button className="btn" onClick={getUserPolls}>
               My polls
             </button>
+            {/* <button className="btn" onClick={getUserPolls}>
+              My polls
+            </button> */}
             {/* <button className="btn" onClick={getNotVotedPolls}>
               Not Voted
             </button> */}

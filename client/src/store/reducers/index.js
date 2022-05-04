@@ -3,14 +3,15 @@ import { combineReducers } from 'redux';
 import error from './error';
 import auth from './auth';
 import { polls, currentPoll } from './polls';
-// import { users } from './users';
+import { users, currentUser } from './users';
 
 export default combineReducers({
   auth,
   error,
   polls,
   currentPoll,
-  // users,
+  users,
+  currentUser,
 });
 // export default combineReducers({
 //   auth,

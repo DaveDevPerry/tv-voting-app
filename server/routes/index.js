@@ -1,3 +1,3 @@
 module.exports.auth = require('./auth');
 module.exports.poll = require('./poll');
-// module.exports.users = require('./users');
+module.exports.user = require('./user');

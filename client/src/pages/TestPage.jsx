@@ -9,6 +9,8 @@ import { setToken, setCurrentUser, addError } from '../store/actions';
 import Auth from '../components/Auth';
 import Poll from '../components/Poll';
 import Polls from '../components/Polls';
+import User from '../components/User';
+import Users from '../components/Users';
 import ErrorMessage from '../components/ErrorMessage';
 import CreatePoll from '../components/CreatePoll';
 
@@ -26,6 +28,14 @@ const UITest = props => (
   <Provider store={store}>
     <Fragment>
       <h1>UI Test Page</h1>
+
+      <h2>Testing Users Component: </h2>
+      <Users {...props} />
+      <hr />
+
+      <h2>Testing User Component: </h2>
+      <User />
+      <hr />
 
       <h2>Testing Error Component: </h2>
       <ErrorMessage />

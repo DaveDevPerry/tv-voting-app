@@ -5,28 +5,32 @@ import { connect } from 'react-redux';
 import { getUsers } from '../store/actions';
 
 class Users extends Component {
-  // constructor(props) {
-  //   super(props);
-  //   // this.handleSelect = this.handleSelect.bind(this);
-  // }
+  constructor(props) {
+    super(props);
+    this.handleSelect = this.handleSelect.bind(this);
+  }
   componentDidMount() {
     const { getUsers } = this.props;
     getUsers();
   }
 
-  // handleSelect(id) {
-  //   const { history } = this.props;
-  //   history.push(`/poll/${id}`);
-  // }
+  handleSelect(id) {
+    const { history } = this.props;
+    history.push(`/user/${id}`);
+  }
 
   render() {
     const { getUsers, auth } = this.props;
 
     // REMOVE DUPLICATES BEFORE MAPPING
     const users = this.props.users.map(user => (
-      <div key={user._id}>
-        <h4>{user.user.username}</h4>
-        {user.user.username}
+      <div
+        className="poll-card poll-card-new"
+        onClick={() => this.handleSelect(user._id)}
+        key={user._id}>
+        <div key={user._id}>
+          <h4>{user}hi</h4>
+        </div>
       </div>
     ));
     // const polls = this.props.polls.map(poll => (

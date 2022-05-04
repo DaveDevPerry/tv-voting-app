@@ -2,15 +2,16 @@ import React from 'react';
 import { connect } from 'react-redux';
 import { Switch, Route, withRouter } from 'react-router-dom';
 
-import { getCurrentPoll } from '../store/actions';
+import { getCurrentPoll, getCurrentUser } from '../store/actions';
 import HomePage from '../pages/HomePage';
 import AuthPage from '../pages/AuthPage';
 import PollPage from '../pages/PollPage';
 import CreatePollPage from '../pages/CreatePollPage';
 import TestPage from '../pages/TestPage';
-// import UserPage from '../pages/UserPage';
+import UsersPage from '../pages/UsersPage';
+import UserPage from '../pages/UserPage';
 
-const RouteViews = ({ getCurrentPoll, auth }) => (
+const RouteViews = ({ getCurrentPoll, getCurrentUser, auth }) => (
   <main className="container">
     <Switch>
       <Route
@@ -18,6 +19,14 @@ const RouteViews = ({ getCurrentPoll, auth }) => (
         path="/"
         render={props => (
           <HomePage {...props} isAuthenticated={auth.isAuthenticated} />
+        )}
+      />
+      <Route exact path="/users" render={props => <UsersPage {...props} />} />
+      <Route
+        exact
+        path="/user/:id"
+        render={props => (
+          <UserPage getUser={id => getCurrentUser(id)} {...props} />
         )}
       />
       <Route
@@ -49,7 +58,7 @@ const RouteViews = ({ getCurrentPoll, auth }) => (
           <PollPage getPoll={id => getCurrentPoll(id)} {...props} />
         )}
       />
-      {/* <Route exact path="/user" render={props => <UserPage {...props} />} /> */}
+
       <Route exact path="/test" render={() => <TestPage />} />
     </Switch>
   </main>
@@ -60,6 +69,6 @@ export default withRouter(
     store => ({
       auth: store.auth,
     }),
-    { getCurrentPoll },
+    { getCurrentPoll, getCurrentUser },
   )(RouteViews),
 );
