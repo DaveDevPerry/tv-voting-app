@@ -92,12 +92,12 @@ class Polls extends Component {
             {/* <button className="btn" onClick={getNotVotedPolls}>
               Not Voted
             </button> */}
-            <button className="btn" onClick={getPopularPolls}>
-              Popular
-            </button>
             <button className="btn" onClick={getPolls}>
               All polls
               {/* {polls.length} */}
+            </button>
+            <button className="btn" onClick={getPopularPolls}>
+              Popular
             </button>
             <Link className="navbar-item btn" to="/poll/new">
               Add Poll

@@ -34,6 +34,9 @@ export const getUserPolls = () => {
     try {
       const polls = await API.call('get', 'polls/user');
       // console.log('get user polls');
+      polls.sort((a, b) => {
+        return b.voted.length - a.voted.length;
+      });
       dispatch(setPolls(polls));
       dispatch(removeError());
     } catch (err) {
