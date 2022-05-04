@@ -5,7 +5,7 @@ import { MdHowToVote } from 'react-icons/md';
 import { connect } from 'react-redux';
 import { Link } from 'react-router-dom';
 
-import { getPolls, getUserPolls } from '../store/actions';
+import { getPolls, getUserPolls, getPopularPolls } from '../store/actions';
 
 class Polls extends Component {
   constructor(props) {
@@ -23,7 +23,7 @@ class Polls extends Component {
   }
 
   render() {
-    const { getPolls, getUserPolls, auth } = this.props;
+    const { getPolls, getUserPolls, getPopularPolls, auth } = this.props;
 
     // WORKING LI VERSION
     // const polls = this.props.polls.map(poll => (
@@ -89,6 +89,12 @@ class Polls extends Component {
             <button className="btn" onClick={getUserPolls}>
               My polls
             </button>
+            {/* <button className="btn" onClick={getNotVotedPolls}>
+              Not Voted
+            </button> */}
+            <button className="btn" onClick={getPopularPolls}>
+              Popular
+            </button>
             <button className="btn" onClick={getPolls}>
               All polls
               {/* {polls.length} */}
@@ -113,5 +119,5 @@ export default connect(
     auth: store.auth,
     polls: store.polls,
   }),
-  { getPolls, getUserPolls },
+  { getPolls, getUserPolls, getPopularPolls },
 )(Polls);

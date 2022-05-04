@@ -16,6 +16,10 @@ export const getPolls = () => {
   return async dispatch => {
     try {
       const polls = await API.call('get', `polls`);
+      // console.log('get polls');
+      polls.sort((a, b) => {
+        return a.voted.length - b.voted.length;
+      });
       dispatch(setPolls(polls));
       dispatch(removeError());
     } catch (err) {
@@ -29,6 +33,7 @@ export const getUserPolls = () => {
   return async dispatch => {
     try {
       const polls = await API.call('get', 'polls/user');
+      // console.log('get user polls');
       dispatch(setPolls(polls));
       dispatch(removeError());
     } catch (err) {
@@ -37,6 +42,35 @@ export const getUserPolls = () => {
     }
   };
 };
+export const getPopularPolls = () => {
+  return async dispatch => {
+    try {
+      const polls = await API.call('get', `polls`);
+      // console.log('sorted', polls);
+      polls.sort((a, b) => {
+        return b.voted.length - a.voted.length;
+      });
+      dispatch(setPolls(polls));
+      dispatch(removeError());
+    } catch (err) {
+      const { error } = err.response.data;
+      dispatch(addError(error));
+    }
+  };
+};
+// export const getNotVotedPolls = user => {
+//   return async dispatch => {
+//     try {
+//       const polls = await API.call('get', 'polls');
+//       console.log('get not voted polls', polls, user);
+//       dispatch(setPolls(polls));
+//       dispatch(removeError());
+//     } catch (err) {
+//       const { error } = err.response.data;
+//       dispatch(addError(error));
+//     }
+//   };
+// };
 
 export const createPoll = data => {
   return async dispatch => {
