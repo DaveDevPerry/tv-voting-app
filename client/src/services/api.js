@@ -1,7 +1,8 @@
 import axios from 'axios';
 
-const host = 'https://tv-poll.herokuapp.com/api';
-// const host = 'https://tv-poll.herokuapp.com';
+const host = `https://tv-voting-app-server.onrender.com/api`;
+// const host = 'https://tv-poll.herokuapp.com/api';
+
 // host for local dev below
 // const host = 'http://localhost:4000/api';
 
